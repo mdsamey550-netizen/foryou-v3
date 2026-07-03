@@ -179,12 +179,31 @@
                         <source src="videos/video1.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    
-                     <video class="media-video" id="mediaVideo" controls>
+                
+                    <!-- Image Display (Uncomment if using image instead of video) -->
+                    <!-- <img src="images/media-image.jpg" alt="Special Memory" class="media-image" id="mediaImage"> -->
+
+                    <!-- Play Button Overlay (for video) -->
+                    <div class="play-overlay" id="playOverlay">
+                        <button class="play-button" id="playButton">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                                <path d="M8 5v14l11-7z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <section class="media-section fade-in" id="mediaSection">
+            <div class="media-container">
+                <div class="media-wrapper">
+                    <!-- Video Player (Comment out if using image only) -->
+                    <video class="media-video" id="mediaVideo" controls>
                         <source src="videos/video.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-
+                
                     <!-- Image Display (Uncomment if using image instead of video) -->
                     <!-- <img src="images/media-image.jpg" alt="Special Memory" class="media-image" id="mediaImage"> -->
 
