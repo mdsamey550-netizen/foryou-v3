@@ -380,54 +380,6 @@ function createConfetti() {
         }, i * 50);
     }
 }
-// ================================
-// VIDEO GALLERY CONTROLS
-// ================================
-
-const galleryVideos = document.querySelectorAll('.gallery-video');
-const videoPlayOverlays = document.querySelectorAll('.video-play-overlay');
-const videoPlayBtns = document.querySelectorAll('.video-play-btn');
-
-// Add play button functionality for each video
-videoPlayBtns.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        const video = galleryVideos[index];
-        const overlay = videoPlayOverlays[index];
-        
-        video.play();
-        overlay.classList.add('hidden');
-    });
-});
-
-// Handle video pause/play events
-galleryVideos.forEach((video, index) => {
-    const overlay = videoPlayOverlays[index];
-    
-    video.addEventListener('pause', () => {
-        if (video.currentTime < video.duration) {
-            overlay.classList.remove('hidden');
-        }
-    });
-    
-    video.addEventListener('play', () => {
-        overlay.classList.add('hidden');
-    });
-    
-    video.addEventListener('ended', () => {
-        overlay.classList.remove('hidden');
-    });
-});
-
-// Pause all other videos when one plays
-galleryVideos.forEach((currentVideo, currentIndex) => {
-    currentVideo.addEventListener('play', () => {
-        galleryVideos.forEach((otherVideo, otherIndex) => {
-            if (otherIndex !== currentIndex) {
-                otherVideo.pause();
-            }
-        });
-    });
-});
 
 // ================================
 // CONSOLE MESSAGE
