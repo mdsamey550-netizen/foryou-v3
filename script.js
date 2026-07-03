@@ -134,6 +134,34 @@ if (mediaVideo && playOverlay && playButton) {
 }
 
 // ================================
+// SECOND VIDEO PLAYER
+// ================================
+
+const mediaVideo2 = document.getElementById('mediaVideo2');
+const playOverlay2 = document.getElementById('playOverlay2');
+const playButton2 = document.getElementById('playButton2');
+
+if (mediaVideo2 && playOverlay2 && playButton2) {
+    playButton2.addEventListener('click', () => {
+        mediaVideo2.play();
+        playOverlay2.classList.add('hidden');
+    });
+
+    mediaVideo2.addEventListener('pause', () => {
+        if (mediaVideo2.currentTime < mediaVideo2.duration) {
+            playOverlay2.classList.remove('hidden');
+        }
+    });
+
+    mediaVideo2.addEventListener('play', () => {
+        playOverlay2.classList.add('hidden');
+    });
+
+    mediaVideo2.addEventListener('ended', () => {
+        playOverlay2.classList.remove('hidden');
+    });
+}
+// ================================
 // SCROLL PROGRESS BAR
 // ================================
 
